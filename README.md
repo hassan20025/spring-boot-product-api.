@@ -31,7 +31,7 @@ spring.datasource.url=jdbc:postgresql://localhost:5432/product
 spring.datasource.username=postgres
 spring.datasource.password=YOUR_PASSWORD
 spring.jpa.hibernate.ddl-auto=update
-
+```
 mvn spring-boot:run
 
 API Endpoints
@@ -46,20 +46,25 @@ API Endpoints
 
 
 ## React.js Example Usage
-Add product with image
-
+### Add product with image
+```
 const formData = new FormData();
 formData.append("product", JSON.stringify(product));
 formData.append("imageFile", file);
-
+```
+```
 await axios.post("http://localhost:8080/api/product", formData, {
   headers: { "Content-Type": "multipart/form-data" }
 });
+```
 
-
-Get products
+### Get products
+```
 const res = await axios.get("http://localhost:8080/api/products");
+```
 
-Get product image
+### Get product image
+```
 <img src={`http://localhost:8080/api/product/${id}/image`} />
+```
 
